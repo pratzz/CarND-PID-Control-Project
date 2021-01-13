@@ -96,3 +96,18 @@ still be compilable with cmake and make./
 ## How to write a README
 A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
 
+
+
+
+## Approach
+This is an implementation of PID controller which is used to control the speed, braks and throttle of the car helping in moving the car along a trajectory. It consists of 3 components as explained by Sebastian, namely, proportional(p), derivative(d) and integral(i). These parameters need to be tuned for a smooth and fast ride. There are ways to tune them, one being twiddle as mentioned by Sebastian but in my solution these were tuned manually by trial and error, this helped in understanding the effect of the parameters. 
+
+Initially I set all 3 to zero, this led to the car going off the road during the turn.
+
+P parameter known as proportial tries to get the car against the cte or cross-track error, that is to the centre of the lane. Upon setting this parameter alone, I noticed that the car tried to stay to the centre, whenever it deviated off the boundary, it would drive itself back to the centre but it overshoots and eventually goes off the road.
+
+D paremeter comes to the rescue to the the above problem for P parameter. It helps smoothen the oscillations while approaching the centre line.
+
+I parameter is used to compensate the bias that the car steering wheel might cause.
+
+
